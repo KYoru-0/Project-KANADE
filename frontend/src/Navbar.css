@@ -1,0 +1,169 @@
+.navbar {
+  background-color: #000000;
+  border-bottom: 2px solid var(--highlight);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
+}
+
+.navbar-container {
+  width: 100%;
+  padding: 0 1.25rem 0 0.5rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-brand:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+/* Seamless logo container with no borders or shadows to blend fully with navbar */
+.logo-container {
+  width: 48px;
+  height: 48px;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.navbar-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background-color: #000000;
+}
+
+.brand-text {
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-prefix {
+  color: var(--text-primary);
+}
+
+.brand-accent {
+  color: var(--highlight);
+  margin-left: 3px;
+  text-shadow: 0 0 12px rgba(238, 216, 113, 0.35);
+}
+
+/* User profile section on the right */
+.navbar-user {
+  display: flex;
+  align-items: center;
+}
+
+.user-tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.user-profile-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  padding: 4px 14px 4px 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.user-profile-btn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--highlight);
+  box-shadow: 0 0 10px rgba(238, 216, 113, 0.2);
+}
+
+.user-avatar-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  border: 1px solid rgba(238, 216, 113, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  filter: invert(88%) sepia(21%) saturate(760%) hue-rotate(352deg) brightness(102%) contrast(92%);
+}
+
+.user-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--text-primary);
+}
+
+/* Tooltip on hover */
+.user-tooltip {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 250px;
+  background-color: #1c1c1c;
+  color: var(--text-primary);
+  border: 1px solid var(--highlight);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 12px rgba(238, 216, 113, 0.15);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 1010;
+  text-align: left;
+}
+
+/* Tooltip small arrow pointing up */
+.user-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  background-color: #1c1c1c;
+  border-left: 1px solid var(--highlight);
+  border-top: 1px solid var(--highlight);
+  transform: rotate(45deg);
+}
+
+/* Show tooltip when hovering over wrapper */
+.user-tooltip-wrapper:hover .user-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
