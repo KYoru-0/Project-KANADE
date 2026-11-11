@@ -17,3 +17,4 @@ backend/public/audio/*
 backend/public/covers/*
 !backend/public/audio/.gitkeep
 !backend/public/covers/.gitkeep
+*.zip
